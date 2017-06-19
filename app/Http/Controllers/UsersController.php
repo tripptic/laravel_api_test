@@ -15,7 +15,6 @@ class UsersController extends Controller
             return response('Wrong language', 400);
         }
         $goods = Good::find($user->goods_id);
-        //dd($user);
         foreach ($goods as $good) {
             $good->caption = isset($good->caption[$lang]) ? $good->caption[$lang] : '';
         }
